@@ -6,9 +6,9 @@ class Estado {
 	String sigla
 	Regiao regiao
 
-    static constraints = {
-    	nome blank: false
-    	sigla blank: false, size: 2
-    	regiao nullable: false
-    }
+	static constraints = {
+		nome blank: false
+		sigla blank: false, size: 2..2
+		regiao nullable: false
+	}
 }
