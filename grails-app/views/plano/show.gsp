@@ -45,7 +45,7 @@
 				<li class="fieldcontain">
 					<span id="operadora-label" class="property-label"><g:message code="plano.operadora.label" default="Operadora" /></span>
 					
-						<span class="property-value" aria-labelledby="operadora-label"><g:link controller="operadora" action="show" id="${planoInstance?.operadora?.id}">${planoInstance?.operadora?.nome?.encodeAsHTML()}</g:link></span>
+						<span class="property-value" aria-labelledby="operadora-label"><g:link controller="operadora" action="show" id="${planoInstance?.operadora?.id}">${planoInstance?.operadora?.encodeAsHTML()}</g:link></span>
 					
 				</li>
 				</g:if>

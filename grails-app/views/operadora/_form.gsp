@@ -17,13 +17,15 @@
 		
 	</label>
 	
-	<ul class="one-to-many">
-		<g:each in="${operadoraInstance?.planos}" var="p">
-		<li><g:link controller="plano" action="show" id="${p.id}">${p?.nome?.encodeAsHTML()}</g:link></li>
-	</g:each>
-	<li class="add">
-		<g:link controller="plano" action="create" params="['operadora.id': operadoraInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'plano.label', default: 'Plano')])}</g:link>
-	</li>
+<ul class="one-to-many">
+<g:each in="${operadoraInstance?.planos?}" var="p">
+    <li><g:link controller="plano" action="show" id="${p.id}">${p?.encodeAsHTML()}</g:link></li>
+</g:each>
+<li class="add">
+<g:link controller="plano" action="create" params="['operadora.id': operadoraInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'plano.label', default: 'Plano')])}</g:link>
+</li>
 </ul>
+
+
 </div>
 

@@ -5,15 +5,15 @@ package br.com.acme.planoCerto
 import grails.test.mixin.*
 import spock.lang.*
 
-@TestFor(PlanoController)
-@Mock(Plano)
-class PlanoControllerSpec extends Specification {
+@TestFor(LinhaTelefonicaController)
+@Mock(LinhaTelefonica)
+class LinhaTelefonicaControllerSpec extends Specification {
 
     def populateValidParams(params) {
         assert params != null
-        params["nome"] = 'TIM'
-        params["tipoPlano"] = Plano.TipoPlano.POSPAGO
-        params["operadora"] = new Operadora();
+        params["ddd"] = 61
+        params["numero"] = '9999-0000'
+        params["operadora"] = new Operadora()
     }
 
     void "Test the index action returns the correct model"() {
@@ -22,8 +22,8 @@ class PlanoControllerSpec extends Specification {
             controller.index()
 
         then:"The model is correct"
-            !model.planoInstanceList
-            model.planoInstanceCount == 0
+            !model.linhaTelefonicaInstanceList
+            model.linhaTelefonicaInstanceCount == 0
     }
 
     void "Test the create action returns the correct model"() {
@@ -31,32 +31,32 @@ class PlanoControllerSpec extends Specification {
             controller.create()
 
         then:"The model is correctly created"
-            model.planoInstance!= null
+            model.linhaTelefonicaInstance!= null
     }
 
     void "Test the save action correctly persists an instance"() {
 
         when:"The save action is executed with an invalid instance"
             request.contentType = FORM_CONTENT_TYPE
-            def plano = new Plano()
-            plano.validate()
-            controller.save(plano)
+            def linhaTelefonica = new LinhaTelefonica()
+            linhaTelefonica.validate()
+            controller.save(linhaTelefonica)
 
         then:"The create view is rendered again with the correct model"
-            model.planoInstance!= null
+            model.linhaTelefonicaInstance!= null
             view == 'create'
 
         when:"The save action is executed with a valid instance"
             response.reset()
             populateValidParams(params)
-            plano = new Plano(params)
+            linhaTelefonica = new LinhaTelefonica(params)
 
-            controller.save(plano)
+            controller.save(linhaTelefonica)
 
         then:"A redirect is issued to the show action"
-            response.redirectedUrl == '/plano/show/1'
+            response.redirectedUrl == '/linhaTelefonica/show/1'
             controller.flash.message != null
-            Plano.count() == 1
+            LinhaTelefonica.count() == 1
     }
 
     void "Test that the show action returns the correct model"() {
@@ -68,11 +68,11 @@ class PlanoControllerSpec extends Specification {
 
         when:"A domain instance is passed to the show action"
             populateValidParams(params)
-            def plano = new Plano(params)
-            controller.show(plano)
+            def linhaTelefonica = new LinhaTelefonica(params)
+            controller.show(linhaTelefonica)
 
         then:"A model is populated containing the domain instance"
-            model.planoInstance == plano
+            model.linhaTelefonicaInstance == linhaTelefonica
     }
 
     void "Test that the edit action returns the correct model"() {
@@ -84,11 +84,11 @@ class PlanoControllerSpec extends Specification {
 
         when:"A domain instance is passed to the edit action"
             populateValidParams(params)
-            def plano = new Plano(params)
-            controller.edit(plano)
+            def linhaTelefonica = new LinhaTelefonica(params)
+            controller.edit(linhaTelefonica)
 
         then:"A model is populated containing the domain instance"
-            model.planoInstance == plano
+            model.linhaTelefonicaInstance == linhaTelefonica
     }
 
     void "Test the update action performs an update on a valid domain instance"() {
@@ -97,28 +97,28 @@ class PlanoControllerSpec extends Specification {
             controller.update(null)
 
         then:"A 404 error is returned"
-            response.redirectedUrl == '/plano/index'
+            response.redirectedUrl == '/linhaTelefonica/index'
             flash.message != null
 
 
         when:"An invalid domain instance is passed to the update action"
             response.reset()
-            def plano = new Plano()
-            plano.validate()
-            controller.update(plano)
+            def linhaTelefonica = new LinhaTelefonica()
+            linhaTelefonica.validate()
+            controller.update(linhaTelefonica)
 
         then:"The edit view is rendered again with the invalid instance"
             view == 'edit'
-            model.planoInstance == plano
+            model.linhaTelefonicaInstance == linhaTelefonica
 
         when:"A valid domain instance is passed to the update action"
             response.reset()
             populateValidParams(params)
-            plano = new Plano(params).save(flush: true)
-            controller.update(plano)
+            linhaTelefonica = new LinhaTelefonica(params).save(flush: true)
+            controller.update(linhaTelefonica)
 
         then:"A redirect is issues to the show action"
-            response.redirectedUrl == "/plano/show/$plano.id"
+            response.redirectedUrl == "/linhaTelefonica/show/$linhaTelefonica.id"
             flash.message != null
     }
 
@@ -128,23 +128,23 @@ class PlanoControllerSpec extends Specification {
             controller.delete(null)
 
         then:"A 404 is returned"
-            response.redirectedUrl == '/plano/index'
+            response.redirectedUrl == '/linhaTelefonica/index'
             flash.message != null
 
         when:"A domain instance is created"
             response.reset()
             populateValidParams(params)
-            def plano = new Plano(params).save(flush: true)
+            def linhaTelefonica = new LinhaTelefonica(params).save(flush: true)
 
         then:"It exists"
-            Plano.count() == 1
+            LinhaTelefonica.count() == 1
 
         when:"The domain instance is passed to the delete action"
-            controller.delete(plano)
+            controller.delete(linhaTelefonica)
 
         then:"The instance is deleted"
-            Plano.count() == 0
-            response.redirectedUrl == '/plano/index'
+            LinhaTelefonica.count() == 0
+            response.redirectedUrl == '/linhaTelefonica/index'
             flash.message != null
     }
 }

@@ -1,7 +1,5 @@
 package br.com.acme.planoCerto
 
-
-
 import grails.test.mixin.*
 import spock.lang.*
 
@@ -10,8 +8,8 @@ import spock.lang.*
 class OperadoraControllerSpec extends Specification {
 
     def populateValidParams(params) {
-        assert params != null
-        params["nome"] = 'TIM'
+        assert params != null        
+        params["nome"] = 'someValidName'
     }
 
     void "Test the index action returns the correct model"() {
@@ -41,7 +39,7 @@ class OperadoraControllerSpec extends Specification {
             controller.save(operadora)
 
         then:"The create view is rendered again with the correct model"
-            model.operadoraInstance!= null
+            model.operadoraInstance != null
             view == 'create'
 
         when:"The save action is executed with a valid instance"

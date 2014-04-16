@@ -3,10 +3,11 @@ import br.com.acme.planoCerto.*
 class BootStrap {
 
     def init = { servletContext ->
+        def tim
 
     	//Carga das operadoras disponíveis atualmente no país
     	if(!Operadora.count()){
-    		new Operadora(nome: "TIM")
+    		tim = new Operadora(nome: "TIM")
                 .addToPlanos(new Plano(nome: "TIM Infinity", tipoPlano: Plano.TipoPlano.POSPAGO))
                 .addToPlanos(new Plano(nome: "Liberty Express", tipoPlano: Plano.TipoPlano.POSPAGO))
                 .addToPlanos(new Plano(nome: "Liberty Controle Express", tipoPlano: Plano.TipoPlano.POSPAGO))
@@ -53,6 +54,11 @@ class BootStrap {
 
             //Estados da Região III
             new Estado(nome: "São Paulo", sigla: "SP", regiao: Regiao.III).save(failOnError: true)
+        }
+
+        //Carga de linha telefônica para testes
+        if(!LinhaTelefonica.count()){
+            new LinhaTelefonica(ddd: 61, numero: "9243-5973", operadora: tim).save(failOnError: true)
         }
     }
 

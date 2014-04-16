@@ -7,8 +7,8 @@ class Estado {
 	Regiao regiao
 
 	static constraints = {
-		nome blank: false
-		sigla blank: false, size: 2..2
+		nome blank: false, nullable: false
+		sigla nullable: false, size: 2..2
 		regiao nullable: false
 	}
 }
