@@ -1,7 +1,5 @@
 package br.com.acme.planoCerto
 
-import org.spockframework.compiler.model.WhenBlock;
-
 import grails.test.mixin.TestFor
 import spock.lang.Specification
 

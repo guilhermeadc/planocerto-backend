@@ -8,4 +8,3 @@ enum TipoLigacao {
 
     static mapWith = 'none'
 }
-

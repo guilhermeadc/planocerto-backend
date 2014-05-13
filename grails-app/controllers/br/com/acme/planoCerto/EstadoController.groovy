@@ -1,7 +1,5 @@
 package br.com.acme.planoCerto
 
-
-
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
 
@@ -20,7 +18,7 @@ class EstadoController {
     }
 
     def create() {
-        respond new Estado(params)
+        respond bindData(new Estado(), params)
     }
 
     @Transactional

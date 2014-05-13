@@ -20,7 +20,7 @@ class OperadoraController {
     }
 
     def create() {
-        respond new Operadora(params)
+        respond bindData(new Operadora(), params)
     }
 
     @Transactional
@@ -51,7 +51,7 @@ class OperadoraController {
     }
 
     @Transactional
-    def update(Operadora operadoraInstance) {
+    def upparamsdate(Operadora operadoraInstance) {
         if (operadoraInstance == null) {
             notFound()
             return

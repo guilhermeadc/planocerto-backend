@@ -20,7 +20,7 @@ class PlanoController {
     }
 
     def create() {
-        respond new Plano(params)
+        respond bindData(new Plano(), params)
     }
 
     @Transactional

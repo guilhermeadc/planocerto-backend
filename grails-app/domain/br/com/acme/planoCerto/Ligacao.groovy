@@ -10,7 +10,7 @@ class Ligacao {
     //TimeDuration duracao
     Tarifacao tarifacao
     TipoLigacao tipo
-    Bolean intraRede
+    Boolean intraRede
     static belongsTo = [linha: LinhaTelefonica]
     
     static constraints = {        

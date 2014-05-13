@@ -18,7 +18,7 @@ class LinhaTelefonicaController {
     }
 
     def create() {
-        respond new LinhaTelefonica(params)
+        respond bindData(new LinhaTelefonica(), params)
     }
 
     @Transactional
