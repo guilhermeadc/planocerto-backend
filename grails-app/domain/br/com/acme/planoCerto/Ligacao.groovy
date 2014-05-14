@@ -1,13 +1,10 @@
 package br.com.acme.planoCerto
 
-import groovy.time.*
-import groovy.time.TimeDuration
-
 class Ligacao {
         
     Date data
     String numero
-    //TimeDuration duracao
+    int duracao
     Tarifacao tarifacao
     TipoLigacao tipo
     Boolean intraRede
@@ -16,10 +13,10 @@ class Ligacao {
     static constraints = {        
         data nullable: false
         numero nullable: false
-        //duracao nullable: false
+        duracao nullable: false
         tarifacao nullable: false
         tipo nullable: false
-        linha: nullable: false
-        intraRede: nullable: false
+        linha nullable: false
+        intraRede nullable: false
     }
 }
