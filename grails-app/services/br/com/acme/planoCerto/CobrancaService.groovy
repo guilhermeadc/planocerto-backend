@@ -13,8 +13,15 @@ class CobrancaService {
         CalculoLigacao calculo = obterEstrategiaCalculo(linha)
 
         // Calcular custo dos serviços de telefonias
-    	def cobranca = new Cobranca(linha, ligacoes)
-        cobranca.itens.each { calculo.calcularLigacao(it) }
+    	def cobranca = new Cobranca(linha)
+        def itemCobranca = null
+
+        for(def lig : ligacoes){
+            itemCobranca = calculo.calcularLigacao(cobranca, lig)
+
+            if(itemCobranca)
+                cobranca.itens.add(itemCobranca);
+        }
 
     	return cobranca
     }

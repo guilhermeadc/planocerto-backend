@@ -1,7 +1,5 @@
 package br.com.acme.planoCerto
 
-
-
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
 
@@ -51,7 +49,7 @@ class OperadoraController {
     }
 
     @Transactional
-    def upparamsdate(Operadora operadoraInstance) {
+    def update(Operadora operadoraInstance) {
         if (operadoraInstance == null) {
             notFound()
             return

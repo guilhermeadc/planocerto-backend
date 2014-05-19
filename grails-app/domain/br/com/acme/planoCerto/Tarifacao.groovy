@@ -2,6 +2,9 @@ package br.com.acme.planoCerto
 
 enum Tarifacao {
 
+    /** Regra de tarifaçao desconhecida */
+    NENHUM,
+
 	/** No contexto de sistemas celulares no Brasil, VC1 é o valor pago pelo assinante, por minuto, quando a ligação 
 	for feita para a um assinante fixo na área de tarifação em que está a área de registro do assinante. */
 	VC1, //(Móvel-Fixo)
@@ -23,7 +26,6 @@ enum Tarifacao {
      chamada fora de sua Área de Mobilidade, destinada a usuário do SMP e SME, que habilitou sua estação móvel na Área de
      Registro de origem da chamada*/
     VC_R, // (Móvel-Móvel em Roaming)
-
 
 	/** No contexto de sistemas celulares no Brasil, VC2 é o valor pago pelo assinante, por minuto, quando a ligação for feita 
 	para a um assinante fixo ou móvel fora da área de tarifação em que está a área de registro do assinante, mas com o primeiro 
