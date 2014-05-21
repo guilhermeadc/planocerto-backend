@@ -83,8 +83,8 @@ class CalculoLigacaoTimLibertyControleSpec extends Specification {
         20              || 0.50   //Duração inferior a 30 segundos
         30              || 0.50
         60              || 1.00
-        65              || 1.00   //Duração inferior à unidade de tempo de tarifação é de 06 (seis) segundos
-        66              || 1.10   //Duração inferior à unidade de tempo de tarifação é de 06 (seis) segundos
+        65              || 1.00   //Duração inferior à unidade de tempo de tarifação que é de 06 (seis) segundos
+        66              || 1.10   //Duração superior/igual à unidade de tempo de tarifação de 06 (seis) segundos
         120             || 2.00
     }
 
