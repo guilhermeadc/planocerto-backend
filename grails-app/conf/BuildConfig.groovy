@@ -49,7 +49,7 @@ grails.project.dependency.resolution = {
     dependencies {
         // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes e.g.
         // runtime 'mysql:mysql-connector-java:5.1.27'
-        // runtime 'org.postgresql:postgresql:9.3-1100-jdbc41'
+        runtime 'org.postgresql:postgresql:9.3-1100-jdbc41'
     }
 
     plugins {
@@ -58,7 +58,8 @@ grails.project.dependency.resolution = {
 
         // plugins for the compile step
         compile ":scaffolding:2.0.2"
-        compile ':cache:1.1.1'
+        compile ":cache:1.1.1"
+        compile ":codenarc:0.21" // plugins para análise de qualidade de código
 
         // plugins needed at runtime but not for compilation
         runtime ":hibernate:3.6.10.9" // or ":hibernate4:4.3.4"
@@ -70,7 +71,7 @@ grails.project.dependency.resolution = {
         //runtime ":zipped-resources:1.0.1"
         //runtime ":cached-resources:1.1"
         //runtime ":yui-minify-resources:0.1.5"
-a
+
         // An alternative to the default resources plugin is the asset-pipeline plugin
         //compile ":asset-pipeline:1.6.1"
 
@@ -80,7 +81,5 @@ a
         //compile ":coffee-asset-pipeline:1.5.0"
         //compile ":handlebars-asset-pipeline:1.3.0.1"
 
-        // plugins para análise de qualidade de código
-        compile ":codenarc:0.21"
     }
 }

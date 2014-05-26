@@ -47,4 +47,27 @@ class Cobranca {
         assert ligacao != null, "Parâmetro [ligacao] não pode ser nulo."
         buscarLigacoesSucessivas(ligacao.data, ligacao.tarifacao, ligacao.codigoArea)
     }
+
+    boolean equals(o) {
+        if (this.is(o)) return true
+        if (getClass() != o.class) return false
+
+        Cobranca cobranca = (Cobranca) o
+
+        if (linha != cobranca.linha) return false
+
+        return true
+    }
+
+    int hashCode() {
+        return (linha != null ? linha.hashCode() : 0)
+    }
+
+
+    @Override
+    public String toString() {
+        return "Cobranca{" +
+                "linha=" + linha +
+                '}';
+    }
 }

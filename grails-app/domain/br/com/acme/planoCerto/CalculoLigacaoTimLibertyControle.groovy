@@ -1,9 +1,11 @@
 package br.com.acme.planoCerto
 
-import java.math.*
+import java.math.RoundingMode
 
 class CalculoLigacaoTimLibertyControle implements CalculoLigacao {
     static mapWith = "none"
+
+    String nome = "TIM Liberty Controle"
 
 	@Override
     ItemCobranca calcularLigacao(Cobranca cobranca, Ligacao ligacao) {
@@ -64,4 +66,26 @@ class CalculoLigacaoTimLibertyControle implements CalculoLigacao {
 
         return itemCobranca
 	}
+
+    boolean equals(o) {
+        if (this.is(o)) return true
+        if (getClass() != o.class) return false
+
+        CalculoLigacaoTimLibertyControle that = (CalculoLigacaoTimLibertyControle) o
+
+        if (nome != that.nome) return false
+
+        return true
+    }
+
+    int hashCode() {
+        return (nome != null ? nome.hashCode() : 0)
+    }
+
+    @Override
+    public String toString() {
+        return "CalculoLigacaoTimLibertyControle{" +
+                "nome='" + nome + '\'' +
+                '}';
+    }
 }

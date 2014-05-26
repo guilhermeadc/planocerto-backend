@@ -63,4 +63,6 @@ class ItemCobranca {
         calFinalLigacao.add(Calendar.SECOND, ligacaoInicial.duracao)
         return calFinalLigacao.time
     }
+
+
 }
