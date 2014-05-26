@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="718609b9-72e8-4933-9a8a-760e6216dc17" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/conf/BuildConfig.groovy" afterPath="$PROJECT_DIR$/grails-app/conf/BuildConfig.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/domain/br/com/acme/planoCerto/CalculoLigacaoTimLibertyControle.groovy" afterPath="$PROJECT_DIR$/grails-app/domain/br/com/acme/planoCerto/CalculoLigacaoTimLibertyControle.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/domain/br/com/acme/planoCerto/Cobranca.groovy" afterPath="$PROJECT_DIR$/grails-app/domain/br/com/acme/planoCerto/Cobranca.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/services/br/com/acme/planoCerto/CobrancaService.groovy" afterPath="$PROJECT_DIR$/grails-app/services/br/com/acme/planoCerto/CobrancaService.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/conf/DataSource.groovy" afterPath="$PROJECT_DIR$/grails-app/conf/DataSource.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/domain/br/com/acme/planoCerto/Estado.groovy" afterPath="$PROJECT_DIR$/grails-app/domain/br/com/acme/planoCerto/Estado.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/domain/br/com/acme/planoCerto/ItemCobranca.groovy" afterPath="$PROJECT_DIR$/grails-app/domain/br/com/acme/planoCerto/ItemCobranca.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/domain/br/com/acme/planoCerto/Ligacao.groovy" afterPath="$PROJECT_DIR$/grails-app/domain/br/com/acme/planoCerto/Ligacao.groovy" />
-    </list>
+    <list default="true" id="718609b9-72e8-4933-9a8a-760e6216dc17" name="Default" comment="" />
     <ignored path="planocerto-backend.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
