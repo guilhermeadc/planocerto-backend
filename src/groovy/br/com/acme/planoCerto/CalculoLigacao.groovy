@@ -2,5 +2,5 @@ package br.com.acme.planoCerto
 
 interface CalculoLigacao {
 	static mapWith = "none"
-    ItemCobranca calcularLigacao(Cobranca cobranca, Ligacao ligacao)
+	ItemCobranca calcularLigacao(Cobranca cobranca, Ligacao ligacao)
 }
