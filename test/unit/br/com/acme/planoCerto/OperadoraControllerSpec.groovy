@@ -1,6 +1,5 @@
 package br.com.acme.planoCerto
 
-import grails.test.mixin.*
 import spock.lang.*
 
 @TestFor(OperadoraController)
